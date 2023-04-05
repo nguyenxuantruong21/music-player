@@ -1,0 +1,120 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(to right,#cae094, #ebcc8a);
+  font-weight: bold;
+}
+
+.player{
+  margin:50px auto;
+  width:500px;
+  height: 600px;
+}
+
+.wrapper{
+  text-align: center;
+  border: 1px solid transparent;
+  padding: 30px;
+  border-radius: 20px;
+  background-color: #ddd;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.now-playing{
+  margin-bottom: 15px;
+}
+
+.track-art img{
+  margin: 0 auto;
+  margin-bottom: 15px;
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.track-name{
+  font-size: 35px;
+}
+
+.track-artist{
+  font-size: 25px;
+}
+
+.slider_container{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.seek_slider{
+  margin: 10px;
+  width: 300px;
+  cursor: pointer;
+}
+
+.timer{
+  position: relative;
+}
+
+.timer span{
+  position: absolute;
+  bottom: 30px;
+  opacity: 0.4;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 5px;
+  display: none;
+}
+
+.volume_slider{
+  margin-left: 10px;
+  width: 150px;
+  cursor: pointer;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* animations */
+@keyframes playing{
+  from{
+      transform: rotate(0deg);
+  }
+  25%{
+      transform: rotate(90deg);
+  }
+  50%{
+      transform: rotate(180deg);
+  }
+  75%{
+      transform: rotate(270deg);
+  }
+  to{
+      transform: rotate(360deg);
+  }
+}
+
+.track-art img.playing{
+  border-radius:50% ;
+  animation: playing 5s linear infinite both;
+}
+
+.track-art img.speedup{
+  border-radius: 50%;
+  animation: playing 1s linear infinite both;
+}
+
+.active{
+  color: rgb(201, 136, 16);
+}
